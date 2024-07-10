@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import logo1 from './logo1.svg';
 import './App.css';
 
 function App() {
+  let n=0;
+  const handleDetail=()=>{
+    if(n%2===0){
+      document.getElementById("id1").innerHTML="Additional details or content can go here..."
+      document.getElementById("id2").innerHTML="Hide Detail"
+    }
+    else{
+      document.getElementById("id1").innerHTML=""
+      document.getElementById("id2").innerHTML="Show Detail"
+    }
+    n++;
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <div className='Container'>
+        <img src={logo1} className="App-logo" alt="logo" />
+        <p className='name'><strong>Name: Hariharan M</strong><p className="reg">Register Number: 212221230034</p>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <button id="id2" onClick={handleDetail}>Show Details</button>
+        <div id="id1"></div>
+        </div>
     </div>
   );
 }
